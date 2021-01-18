@@ -1,0 +1,17 @@
+var breaks   = bind "/controls/flight/speedbrake"
+var heading  = bind "/instrumentation/heading-indicator/indicated-heading-deg"
+var offset   = bind "/instrumentation/heading-indicator/offset-deg"
+var roll     = bind "/instrumentation/attitude-indicator/indicated-roll-deg"
+var pitch    = bind "/instrumentation/attitude-indicator/internal-pitch-deg"
+breaks = 0
+throttle = 1
+var h0 = heading
+while alt < 1000 {
+	rudder = (h0 - heading + 0.343)/120
+	aileron = - roll / 70
+	elevator = pitch / 50
+	print "long=", long
+	print "lat=", lat
+	sleep 50
+}
+print "Done"
